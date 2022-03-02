@@ -8,15 +8,15 @@ const router = express.Router();
 
 //Add new car route
 router.post('/',
-    fileUpload.single('image'),
-    [
+    [   
+        check('image', 'Please ImageUrl').not().isEmpty(),
         check('name', 'Please enter a valid car name').not().isEmpty().trim(),
         check('model', 'Please enter a valid car model').not().isEmpty().trim(),
         check('carType', 'Please enter a valid car type').not().isEmpty().trim(),
         check('seats', 'Please enter a valid number of seats').not().isEmpty().isNumeric().trim().isInt({gt: 1, lt: 8 }),
         check('gears', 'Please enter a valid gears type').not().isEmpty().trim(),
         check('price', 'Please enter a valid price').not().isEmpty().isNumeric().trim().isFloat({gt: 0}),
-        check('qt', 'Please enter a valid number of quantity').not().isEmpty().isNumeric().trim().isInt({gt: 0})
+        check('qt', 'Please enter a valid number of quantity').not().isEmpty().isNumeric().trim().isInt({gt: 0}),
     ],
     carsControllers.postCar
 );

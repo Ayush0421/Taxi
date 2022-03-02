@@ -22,7 +22,7 @@ const SingleFleetItem = (props) => {
                 <p className='car-type'><span><GoGear /></span> {props.gears}</p>
                 <p className='car-type'><span><IoMdSnow /></span> {props.clima ? 'yes' : 'no'}</p>
             </div>
-            <img onClick={onToRentMove} src={`http://localhost:5000/${props.image}`} alt='car'/>
+            <img onClick={onToRentMove} src={`${props.image}`} alt='car'/>
             <p className='price'>Price - € <span>{(props.price).toFixed(2)}</span> /For a Day </p>
             <div className='info-btn'>
                 <p><NavLink to={`/rent/${props.id}`}>rent</NavLink></p>

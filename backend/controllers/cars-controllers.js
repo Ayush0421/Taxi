@@ -9,7 +9,7 @@ const postCar = async ( req, res ) => {
         return res.status(422).json({msg: 'Invalid inputs, please check your data.'});
     }
 
-    const { name, model, carType, seats, gears, clima, price, qt } = req.body;
+    const { name, model, carType, seats, gears, clima, price, qt, image } = req.body;
     try{
         const car = new Car({
             name,
@@ -19,7 +19,7 @@ const postCar = async ( req, res ) => {
             gears,
             clima,
             price,
-            image: req.file.path,
+            image,
             qt
         });
 
