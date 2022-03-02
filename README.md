@@ -53,4 +53,4 @@
 	* PDF Invoice
  ![order](img/order.jpg)
 
-All calculations or changes in price or product are made in backend
+All calculations or changes in price or product are made in backends
